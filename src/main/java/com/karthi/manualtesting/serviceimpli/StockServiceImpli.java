@@ -26,34 +26,16 @@ public class StockServiceImpli implements StockService{
         return sRepo.findById(id);
     }
 
-    public String addStock(Stock stock) {
-    	try {
-    		sRepo.save(stock);
-    		return "Success";
-		} 
-    	catch (Exception e) {
-			return "Failure";
-		}
+    public void addStock(Stock stock) {
+    	sRepo.save(stock);
     }
     
-    public String updateStock(Stock stock) {
-        try {
-            sRepo.update(stock);
-    		return "Success";
-		} 
-    	catch (Exception e) {
-			return "Failure";
-		}
+    public void updateStock(Stock stock) {
+    	sRepo.update(stock);
     }
 
-    public String deleteStock(int id) {
-        try {
-            sRepo.deleteById(id);
-    		return "Success";
-		} 
-    	catch (Exception e) {
-			return "Failure";
-		}
+    public void deleteStock(int id) {
+    	sRepo.deleteById(id);
     }
 
 	public List<String> getAllStockNames() {

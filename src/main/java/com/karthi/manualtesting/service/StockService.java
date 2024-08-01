@@ -5,13 +5,13 @@ import java.util.List;
 import com.karthi.manualtesting.model.Stock;
 
 public interface StockService {
-	public String addStock(Stock stock);
+	public void addStock(Stock stock);
 	
-	public String updateStock(Stock stock);
+	public void updateStock(Stock stock);
 	
 	public Stock getStockById(int id);
 	
-	public String deleteStock(int id);
+	public void deleteStock(int id);
 	
 	public List<Stock> getAllStocks();
 	

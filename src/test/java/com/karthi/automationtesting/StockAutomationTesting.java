@@ -1,6 +1,7 @@
 package com.karthi.automationtesting;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class StockAutomationTesting {
+class StockAutomationTesting {
 
 	private WebDriver driver;
 
@@ -85,7 +86,7 @@ public class StockAutomationTesting {
 		driver.findElement(By.name("price")).sendKeys("100009");
 		driver.findElement(By.name("submit")).submit();
 		Thread.sleep(3000);
-		assertEquals("Stock Details Updated Successfully", "Stock Details Updated Successfully");
+		assertTrue(true);
 		driver.switchTo().alert().accept();
 	}
 

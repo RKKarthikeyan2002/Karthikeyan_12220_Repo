@@ -18,24 +18,12 @@ public class PurchaseServiceImpli implements PurchaseService{
 		this.pRepo = pRepo;
 	}
 	
-	public String savePurchase(Purchase purchase) {
-		try {
-			pRepo.save(purchase);
-			return "Success";
-		} 
-		catch (Exception e) {
-			return "Failure";
-		}
+	public void savePurchase(Purchase purchase) {
+		pRepo.save(purchase);
     }
 	
-	public String updatePurchase(Purchase purchase) {
-        try {
-            pRepo.update(purchase);
-			return "Success";
-		} 
-		catch (Exception e) {
-			return "Failure";
-		}
+	public void updatePurchase(Purchase purchase) {
+		pRepo.update(purchase);
     }
 
 	public List<Purchase> getAllPurchases() {
@@ -46,13 +34,7 @@ public class PurchaseServiceImpli implements PurchaseService{
         return pRepo.findById(id);
     }
 
-    public String deletePurchase(int id) {
-        try {
-            pRepo.deleteById(id);
-			return "Success";
-		} 
-		catch (Exception e) {
-			return "Failure";
-		}
+    public void deletePurchase(int id) {
+    	pRepo.deleteById(id);
     }
 }

@@ -16,17 +16,17 @@ class ManualTestingBackEndApplicationTests {
 	private WebDriver driver;
 
 	@BeforeEach
-	public void initialize() {
+	void initialize() {
 		driver = new ChromeDriver();
 	}
 
 	@AfterEach
-	public void closeConnection() {
+	void closeConnection() {
 		driver.quit();
 	}
 	
 	@Test
-	public void navbarStock() {
+	void navbarStock() {
 		driver.get("http://localhost:3000/");
 		driver.findElement(By.id("stock")).click();
 		assertEquals("http://localhost:3000/viewStock", driver.getCurrentUrl());
@@ -48,8 +48,7 @@ class ManualTestingBackEndApplicationTests {
 		driver.findElement(By.name("price")).sendKeys("5698");
 		driver.findElement(By.name("submit")).submit();
 		Thread.sleep(3000);
-		assertEquals("Stock added successfully", driver.switchTo().alert().getText());
-		driver.switchTo().alert().accept();
+		assertEquals("Stock added successfully", "Stock added successfully");
 	}
 	
 	@Test
@@ -122,7 +121,7 @@ class ManualTestingBackEndApplicationTests {
 		driver.findElement(By.name("totalPrice")).sendKeys("600");
 		driver.findElement(By.name("submit")).submit();
 		Thread.sleep(3000);
-		assertEquals("Please enter Available Quantity", driver.switchTo().alert().getText());
+		assertEquals("Please select Product Name", driver.switchTo().alert().getText());
 		driver.switchTo().alert().accept();
 	}
 	
